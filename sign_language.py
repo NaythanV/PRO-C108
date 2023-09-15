@@ -36,8 +36,13 @@ while True:
                 else:
                     finger_fold_status.append(False)
 
-                
-
+                if all(finger_fold_status):
+                    if lm_list[thumb_tip].y < lm_list[thumb_tip-1].y <lm_list[thumb_tip-2].y:
+                        print("LIKE")
+                        cv2.putText(img, "LIKE", (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0),3)
+                    if lm_list[thumb_tip].y < lm_list[thumb_tip-1].y <lm_list[thumb_tip-2].y:
+                        print("DISLIKE")
+                        cv2.putText(img, "LIKE", (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,),3)
 
 
             mp_draw.draw_landmarks(img, hand_landmark,
